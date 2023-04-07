@@ -1,11 +1,15 @@
 import express from 'express';
-import consign from 'consign';
+import controllerRouting from './routes/index';
 
-const server = express();
+const app = express();
+const port = process.env.PORT || 5000;
 
-consign()
-  .include('routes')
-  .then('libs/boot.js')
-  .into(server);
+app.use(express.json());
 
-export default server;
+controllerRouting(app);
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
+export default app;
