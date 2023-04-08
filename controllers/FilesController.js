@@ -11,7 +11,7 @@ const fileQueue = new Queue('fileQueue');
 
 class FilesController {
   /**
-   * It should create a new file in DB and in disk
+   * Should create a new file in DB and in disk
    *
    * Retrieve the user based on the token:
    * If not found, return an error Unauthorized with a status code 401
